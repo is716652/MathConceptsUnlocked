@@ -1,0 +1,10 @@
+{
+  "app": {
+    "bundleName": "is716652.mathconcepts.unlocked",
+    "vendor": "example",
+    "versionCode": 1000000,
+  "versionName": "1.0.0",
+  "icon": "$media:applogo",
+  "label": "$string:app_name"
+  }
+}
