@@ -1,13 +1,27 @@
+/# Dependencies
 /node_modules
 /oh_modules
+
+# IDE and local config
 /local.properties
 /.idea
-**/build
-/.hvigor
+
+# Build and cache
+**/build/
+/.hvigor/
 .cxx
+
+# Linters config (keep tracked if present)
 /.clangd
 /.clang-format
 /.clang-tidy
-**/.test
+
+# Tests cache
+**/.test/
 /.appanalyzer
+
+# Sensitive build profile (contains signing config)
 build-profile.json5
+
+# Entry module preview cache
+entry/.preview/
