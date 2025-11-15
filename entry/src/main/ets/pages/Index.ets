@@ -9,14 +9,14 @@ struct Index {
   }
 
   build() {
-    Stack() {
-      Image($r('app.media.Logo'))
-        .width('100%')
-        .height('100%')
-        .objectFit(ImageFit.Cover)
-        .onClick(() => router.pushUrl({ url: 'pages/Catalog/HighMathCatalog' }))
+    Column() {
+      Stack() {
+        Image($r('app.media.Logo'))
+          .width('100%')
+          .height('100%')
+          .objectFit(ImageFit.Cover)
+          .onClick(() => router.pushUrl({ url: 'pages/Catalog/HighMathCatalog' }))
 
-      Column() {
         Row() {
           Button('隐私政策')
             .fontSize(14)
@@ -37,13 +37,11 @@ struct Index {
         }
         .width('100%')
         .justifyContent(FlexAlign.Center)
+        .padding({ bottom: 16 })
       }
-      .width('100%')
       .height('100%')
-      .justifyContent(FlexAlign.End)
-      .padding({ bottom: 16 })
+      .width('100%')
+      .alignContent(Alignment.Bottom)
     }
-    .height('100%')
-    .width('100%')
   }
 }
