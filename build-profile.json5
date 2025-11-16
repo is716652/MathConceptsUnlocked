@@ -1,0 +1,56 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\is716\\.ohos\\config\\default_MathConceptsUnlocked_YQsAnm2_YQb3Om4Kij7h_Nh65Go7HTajfxa8BzDVixI=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B2135AD0FF2E765CDB26CB4DA618BA75D60F2F4F3447305428F2BF9F13426A10151241BC4A5FF5B",
+          "profile": "C:\\Users\\is716\\.ohos\\config\\default_MathConceptsUnlocked_YQsAnm2_YQb3Om4Kij7h_Nh65Go7HTajfxa8BzDVixI=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\is716\\.ohos\\config\\default_MathConceptsUnlocked_YQsAnm2_YQb3Om4Kij7h_Nh65Go7HTajfxa8BzDVixI=.p12",
+          "storePassword": "0000001B7AA71BD0773D5A08A772AFA82875A2980918F7FF3FDC5227D4389D9DE0FB70D51F55E34F563E48"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.0.0(20)",
+        "compatibleSdkVersion": "6.0.0(20)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
