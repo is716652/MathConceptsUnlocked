@@ -23,7 +23,7 @@ struct HighMathCatalog {
       .padding({ left: 8, right: 8, top: 4, bottom: 4 })
 
       Scroll() {
-        Column() {
+        Column({ space: 12 }) {
           Row() {
             Button('函数与极限').layoutWeight(1)
               .fontSize(16)
@@ -71,14 +71,15 @@ struct HighMathCatalog {
               .padding(16)
           }
           .width('100%')
-          .justifyContent(FlexAlign.Start)
         }
         .width('100%')
-        .padding({ left: 12, right: 12, bottom: 12 })
+        .padding({ left: 12, right: 12, top: 12, bottom: 12 })
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)
       .edgeEffect(EdgeEffect.Spring)
+      .align(Alignment.Top)
     }
     .width('100%')
     .height('100%')
