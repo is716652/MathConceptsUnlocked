@@ -1,0 +1,284 @@
+---
+description: 
+alwaysApply: true
+enabled: true
+updatedAt: 2025-11-16T14:30:43.433Z
+provider: 
+---
+
+# ArkTS 代码规范
+
+## 核心限制规则
+
+### 🚫 严格禁止使用
+
+#### 1. 类型系统禁用项
+- ❌ `any` 类型
+- ❌ `unknown` 类型
+- ❌ 索引签名：`[key: string]: T`
+- ❌ 内联对象字面量类型：`{ name: string, age: number }`
+
+#### 2. 语法特性禁用项
+- ❌ 解构赋值：`const [a, b] = array`、`const {x, y} = obj`
+- ❌ 展开运算符：`...array`、`...object`
+- ❌ 可选链操作符：`obj?.property`
+- ❌ 空值合并操作符：`value ?? defaultValue`
+- ❌ `for...in` 循环（用于对象）
+- ❌ `for...of` 循环（用于对象）
+- ❌ 动态属性访问：`obj[key]`
+
+#### 3. 静态上下文限制
+- ❌ 静态方法中使用 `this` 访问静态成员
+
+## ✅ 正确的编码方式
+
+### 1. 类型定义
+
+```typescript
+// ✅ 使用明确的接口定义
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+// ✅ 函数参数和返回值都有明确类型
+function createUser(name: string, age: number): User {
+  return { name: name, age: age, email: "" };
+}
+
+// ✅ 变量声明有明确类型
+const user: User = createUser("张三", 25);
+```
+
+### 2. 对象操作
+
+```typescript
+// ✅ 使用 Map 替代动态对象
+const dataMap = new Map<string, string>();
+dataMap.set("key1", "value1");
+const value = dataMap.get("key1");
+
+// ✅ 使用 Record 类型
+type StringRecord = Record<string, string>;
+const config: StringRecord = {
+  apiUrl: "https://api.example.com",
+  timeout: "5000"
+};
+
+// ✅ 使用 switch 语句进行属性访问
+function getProperty(obj: User, key: string): string | number {
+  switch (key) {
+    case "name":
+      return obj.name;
+    case "age":
+      return obj.age;
+    case "email":
+      return obj.email;
+    default:
+      throw new Error(`Unknown property: ${key}`);
+  }
+}
+```
+
+### 3. 循环遍历
+
+```typescript
+// ✅ 使用传统 for 循环遍历对象
+const obj = { a: 1, b: 2, c: 3 };
+const keys = Object.keys(obj);
+for (let i = 0; i < keys.length; i++) {
+  const key = keys[i];
+  console.log(key, obj[key as keyof typeof obj]);
+}
+
+// ✅ 数组可以使用 for...of
+const arr = [1, 2, 3];
+for (const item of arr) {
+  console.log(item);
+}
+```
+
+### 4. 数组和对象操作
+
+```typescript
+// ✅ 替代解构赋值
+const first = array[0];
+const second = array[1];
+
+// ✅ 替代展开运算符 - 数组合并
+const newArray: number[] = [];
+for (let i = 0; i < oldArray.length; i++) {
+  newArray.push(oldArray[i]);
+}
+newArray.push(newItem);
+
+// ✅ 替代展开运算符 - 对象合并
+const combined: CombinedType = {
+  prop1: obj1.prop1,
+  prop2: obj2.prop2
+};
+
+// ✅ 数组克隆工具方法
+class ArrayUtils {
+  static clone<T>(source: T[]): T[] {
+    const result: T[] = [];
+    for (let i = 0; i < source.length; i++) {
+      result.push(source[i]);
+    }
+    return result;
+  }
+}
+```
+
+### 5. 可选值处理
+
+```typescript
+// ✅ 替代可选链
+let value: string | undefined;
+if (obj && obj.prop && obj.prop.subProp) {
+  value = obj.prop.subProp;
+}
+
+// ✅ 替代空值合并
+let result: string;
+if (value !== null && value !== undefined) {
+  result = value;
+} else {
+  result = defaultValue;
+}
+```
+
+### 6. 静态方法
+
+```typescript
+// ✅ 静态方法中使用类名访问静态成员
+class DataManager {
+  private static data: string[] = [];
+  
+  static addItem(item: string): void {
+    DataManager.data.push(item); // 使用类名而非 this
+  }
+  
+  static processData(): void {
+    DataManager.addItem("processed"); // 调用静态方法也用类名
+  }
+  
+  static getData(): string[] {
+    return DataManager.data;
+  }
+}
+```
+
+## 实用工具类模板
+
+### 数组操作工具
+
+```typescript
+class ArrayUtils {
+  static clone<T>(source: T[]): T[] {
+    const result: T[] = [];
+    for (let i = 0; i < source.length; i++) {
+      result.push(source[i]);
+    }
+    return result;
+  }
+  
+  static find<T>(items: T[], predicate: (item: T) => boolean): T | undefined {
+    for (let i = 0; i < items.length; i++) {
+      if (predicate(items[i])) {
+        return items[i];
+      }
+    }
+    return undefined;
+  }
+}
+```
+
+### 对象操作工具
+
+```typescript
+class ObjectUtils {
+  static merge<T>(target: T, source: Partial<T>): T {
+    const keys = Object.keys(source) as (keyof T)[];
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      const sourceValue = source[key];
+      if (sourceValue !== undefined) {
+        target[key] = sourceValue;
+      }
+    }
+    return target;
+  }
+}
+```
+
+## 代码检查清单
+
+在提交代码前确认：
+
+- [ ] 所有类型都明确定义（无 `any`/`unknown`）
+- [ ] 所有对象都有接口定义
+- [ ] 没有使用索引签名
+- [ ] 没有使用内联对象类型
+- [ ] 没有使用解构赋值
+- [ ] 没有使用展开运算符
+- [ ] 没有使用可选链 `?.`
+- [ ] 没有使用空值合并 `??`
+- [ ] 对象遍历使用传统 for 循环
+- [ ] 没有动态属性访问 `obj[key]`
+- [ ] 静态方法使用类名调用
+- [ ] 所有函数有返回类型注解
+
+## AI 代码生成规则
+
+AI 在生成 ArkTS 代码时必须：
+
+1. **类型优先**：所有变量、参数、返回值都有明确类型
+2. **接口定义**：复杂对象先定义接口，后使用
+3. **避免禁用语法**：严格遵守禁用规则
+4. **使用工具类**：优先使用标准工具类方法
+5. **显式操作**：用显式代码替代语法糖
+6. **性能考虑**：避免不必要的对象创建
+
+## 常见错误修复模式
+
+### 动态属性访问 → Switch 语句
+```typescript
+// ❌ 错误
+const value = obj[key];
+
+// ✅ 正确
+let value: ValueType;
+switch (key) {
+  case "prop1": value = obj.prop1; break;
+  case "prop2": value = obj.prop2; break;
+  default: value = defaultValue;
+}
+```
+
+### 展开运算符 → 显式复制
+```typescript
+// ❌ 错误
+const newArr = [...oldArr, newItem];
+
+// ✅ 正确
+const newArr: ItemType[] = [];
+for (let i = 0; i < oldArr.length; i++) {
+  newArr.push(oldArr[i]);
+}
+newArr.push(newItem);
+```
+
+### 解构赋值 → 逐个赋值
+```typescript
+// ❌ 错误
+const [first, second] = array;
+const {name, age} = user;
+
+// ✅ 正确
+const first = array[0];
+const second = array[1];
+const name = user.name;
+const age = user.age;
+```

@@ -1,13 +1,45 @@
+# 依赖目录
 /node_modules
 /oh_modules
+
+# 本地配置（每个开发者可能不同）
 /local.properties
+
+# IDE 配置
 /.idea
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# 构建产物
 **/build
 /.hvigor
 .cxx
+
+# 代码分析工具
 /.clangd
 /.clang-format
 /.clang-tidy
-**/.test
 /.appanalyzer
-build-profile.json5
+
+# 测试临时文件
+**/.test
+**/.preview
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 临时文件
+*.tmp
+*.temp
+.cache/

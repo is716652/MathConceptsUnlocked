@@ -1,0 +1,147 @@
+---
+description: 
+alwaysApply: true
+enabled: true
+updatedAt: 2025-11-16T14:30:11.576Z
+provider: 
+---
+
+# 鸿蒙项目编译规则
+
+## 编译环境配置
+
+### 工具链路径
+- 命令行工具根目录：`D:\DevEcoStudioProjects\command-line-tools-6`
+- 工具可执行文件目录：`D:\DevEcoStudioProjects\command-line-tools-6\bin`
+- 可用工具：`hvigorw`、`ohpm`、`codelinter`、`hstack`
+
+### 环境变量设置（每次编译前执行）
+
+```powershell
+# 优先使用 6.x 工具链
+$env:Path = "D:\DevEcoStudioProjects\command-line-tools-6\bin;" + $env:Path
+$env:HVIGOR_HOME = "D:\DevEcoStudioProjects\command-line-tools-6\hvigor"
+```
+
+## 标准编译流程
+
+### 完整编译步骤
+```powershell
+# 1. 配置环境
+$env:Path = "D:\DevEcoStudioProjects\command-line-tools-6\bin;" + $env:Path
+$env:HVIGOR_HOME = "D:\DevEcoStudioProjects\command-line-tools-6\hvigor"
+
+# 2. 验证工具版本
+hvigorw -v
+
+# 3. 安装依赖
+ohpm install
+
+# 4. 清理旧构建
+hvigorw clean
+
+# 5. 编译 HAP 包
+hvigorw assembleHap
+```
+
+### 构建产物位置
+- HAP 包路径：`entry/build/default/outputs/default/entry-default-unsigned.hap`
+- 构建日志：`.hvigor/outputs/build-logs/`
+- 缓存文件：`.hvigor/cache/`
+
+## 常用编译命令
+
+### 基础命令
+```bash
+# 编译 HAP 包（默认模式）
+hvigorw assembleHap
+
+# 清理项目
+hvigorw clean
+
+# 重新编译
+hvigorw clean assembleHap
+```
+
+### 依赖管理
+```bash
+# 安装项目依赖
+ohpm install
+
+# 查看依赖树
+ohpm list
+
+# 更新依赖
+ohpm update
+
+# 清理依赖缓存
+ohpm clean
+```
+
+### 代码质量检查
+```bash
+# 运行代码检查
+codelinter
+
+# 堆栈分析
+hstack
+```
+
+## 故障排除指南
+
+### 常见问题及解决方案
+
+#### 1. 工具未找到
+- **原因**：PATH 环境变量未正确配置
+- **解决**：执行环境变量设置命令
+
+#### 2. 版本不支持错误（Unsupported modelVersion 6.0.0）
+- **原因**：当前使用的是旧版工具链
+- **解决**：
+  ```powershell
+  $env:Path = "D:\DevEcoStudioProjects\command-line-tools-6\bin;" + $env:Path
+  $env:HVIGOR_HOME = "D:\DevEcoStudioProjects\command-line-tools-6\hvigor"
+  ```
+
+#### 3. 找不到模块错误
+- **原因**：依赖未安装或已损坏
+- **解决**：
+  ```bash
+  ohpm clean
+  ohpm install
+  ```
+
+#### 4. 编译失败
+- **解决**：
+  ```bash
+  hvigorw clean
+  hvigorw assembleHap
+  ```
+
+#### 5. Unknown mode 'debug' 错误
+- **原因**：某些版本不支持 `--mode` 参数
+- **解决**：使用 `hvigorw assembleHap` 默认模式
+
+## AI 助手执行规则
+
+当需要编译鸿蒙项目时，AI 应该：
+
+1. **自动配置环境**：优先执行环境变量设置命令
+2. **遵循标准流程**：按照完整编译步骤执行
+3. **错误处理**：出现错误时根据故障排除指南操作
+4. **确认产物**：编译成功后确认 HAP 包位置
+5. **使用正确工具**：始终使用 `hvigorw` 而非 `hvigor`
+
+## 性能优化建议
+
+- **增量编译**：避免频繁使用 `clean` 命令
+- **并行编译**：Hvigor 默认启用并行编译
+- **缓存利用**：保留 `.hvigor/cache/` 目录以提升编译速度
+
+## 项目结构识别
+
+- `build-profile.json5`：项目构建配置
+- `hvigorfile.ts`：Hvigor 构建脚本
+- `oh-package.json5`：依赖包配置
+- `entry/`：主模块目录
+- `AppScope/`：应用级配置

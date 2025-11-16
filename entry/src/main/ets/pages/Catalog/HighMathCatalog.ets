@@ -20,7 +20,7 @@ struct HighMathCatalog {
           .textAlign(TextAlign.Center)
       }
       .width('100%')
-      .padding({ left: 8, right: 8, top: 8, bottom: 8 })
+      .padding({ left: 8, right: 8, top: 4, bottom: 4 })
 
       Scroll() {
         Column() {
@@ -28,14 +28,14 @@ struct HighMathCatalog {
             Button('函数与极限').layoutWeight(1)
               .fontSize(16)
               .borderRadius(12)
-              .backgroundColor('#E3F2FD')
+              .backgroundColor('#42A5F5')
               .padding(16)
 
             Button('导数与微分').layoutWeight(1)
               .margin({ left: 8 })
               .fontSize(16)
               .borderRadius(12)
-              .backgroundColor('#E8F5E9')
+              .backgroundColor('#66BB6A')
               .padding(16)
           }
           .width('100%')
@@ -44,14 +44,14 @@ struct HighMathCatalog {
             Button('不定积分').layoutWeight(1)
               .fontSize(16)
               .borderRadius(12)
-              .backgroundColor('#FFF3E0')
+              .backgroundColor('#FFA726')
               .padding(16)
 
             Button('定积分').layoutWeight(1)
               .margin({ left: 8 })
               .fontSize(16)
               .borderRadius(12)
-              .backgroundColor('#F3E5F5')
+              .backgroundColor('#AB47BC')
               .padding(16)
           }
           .width('100%')
@@ -60,20 +60,21 @@ struct HighMathCatalog {
             Button('级数').layoutWeight(1)
               .fontSize(16)
               .borderRadius(12)
-              .backgroundColor('#FCE4EC')
+              .backgroundColor('#EC407A')
               .padding(16)
 
             Button('微分方程').layoutWeight(1)
               .margin({ left: 8 })
               .fontSize(16)
               .borderRadius(12)
-              .backgroundColor('#EDE7F6')
+              .backgroundColor('#7E57C2')
               .padding(16)
           }
           .width('100%')
+          .justifyContent(FlexAlign.Start)
         }
         .width('100%')
-        .padding(12)
+        .padding({ left: 12, right: 12, bottom: 12 })
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)
@@ -81,6 +82,7 @@ struct HighMathCatalog {
     }
     .width('100%')
     .height('100%')
+    .justifyContent(FlexAlign.Start)
     .backgroundColor('#FFFFFF')
   }
 }
