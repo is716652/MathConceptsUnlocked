@@ -30,6 +30,9 @@ struct HighMathCatalog {
               .borderRadius(12)
               .backgroundColor('#42A5F5')
               .padding(16)
+              .onClick(() => {
+                router.pushUrl({ url: 'pages/FunctionLimit/FunctionLimitCatalog' });
+              })
 
             Button('导数与微分').layoutWeight(1)
               .margin({ left: 8 })
@@ -37,6 +40,10 @@ struct HighMathCatalog {
               .borderRadius(12)
               .backgroundColor('#66BB6A')
               .padding(16)
+              .onClick(() => {
+                // TODO: 创建导数与微分目录页
+                console.log('导数与微分页面尚未创建');
+              })
           }
           .width('100%')
 
@@ -46,6 +53,10 @@ struct HighMathCatalog {
               .borderRadius(12)
               .backgroundColor('#FFA726')
               .padding(16)
+              .onClick(() => {
+                // TODO: 创建不定积分目录页
+                console.log('不定积分页面尚未创建');
+              })
 
             Button('定积分').layoutWeight(1)
               .margin({ left: 8 })
@@ -53,6 +64,10 @@ struct HighMathCatalog {
               .borderRadius(12)
               .backgroundColor('#AB47BC')
               .padding(16)
+              .onClick(() => {
+                // TODO: 创建定积分目录页
+                console.log('定积分页面尚未创建');
+              })
           }
           .width('100%')
 
@@ -62,6 +77,10 @@ struct HighMathCatalog {
               .borderRadius(12)
               .backgroundColor('#EC407A')
               .padding(16)
+              .onClick(() => {
+                // TODO: 创建级数目录页
+                console.log('级数页面尚未创建');
+              })
 
             Button('微分方程').layoutWeight(1)
               .margin({ left: 8 })
@@ -69,6 +88,10 @@ struct HighMathCatalog {
               .borderRadius(12)
               .backgroundColor('#7E57C2')
               .padding(16)
+              .onClick(() => {
+                // TODO: 创建微分方程目录页
+                console.log('微分方程页面尚未创建');
+              })
           }
           .width('100%')
         }

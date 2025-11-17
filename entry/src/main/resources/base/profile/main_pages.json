@@ -3,6 +3,19 @@
     "pages/Index",
     "pages/Catalog/HighMathCatalog",
     "pages/Legal/PrivacyPolicy",
-    "pages/Legal/UserAgreement"
+    "pages/Legal/UserAgreement",
+    "pages/FunctionLimit/FunctionLimitCatalog",
+    "pages/FunctionLimit/SetConcept",
+    "pages/FunctionLimit/FunctionConcept",
+    "pages/FunctionLimit/Neighborhood",
+    "pages/FunctionLimit/FunctionDomain",
+    "pages/FunctionLimit/FunctionProperties",
+    "pages/FunctionLimit/InverseAndComposite",
+    "pages/FunctionLimit/ElementaryFunctions",
+    "pages/FunctionLimit/LimitConcept",
+    "pages/FunctionLimit/LimitOperations",
+    "pages/FunctionLimit/LimitCriteria",
+    "pages/FunctionLimit/InfinitesimalAndInfinite",
+    "pages/FunctionLimit/Continuity"
   ]
 }
