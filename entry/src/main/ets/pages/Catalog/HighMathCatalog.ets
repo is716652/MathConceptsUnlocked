@@ -41,8 +41,7 @@ struct HighMathCatalog {
               .backgroundColor('#66BB6A')
               .padding(16)
               .onClick(() => {
-                // TODO: 创建导数与微分目录页
-                console.log('导数与微分页面尚未创建');
+                router.pushUrl({ url: 'pages/Derivative/DerivativeCatalog' });
               })
           }
           .width('100%')

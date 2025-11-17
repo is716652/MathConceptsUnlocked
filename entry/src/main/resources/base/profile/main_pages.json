@@ -16,6 +16,15 @@
     "pages/FunctionLimit/LimitOperations",
     "pages/FunctionLimit/LimitCriteria",
     "pages/FunctionLimit/InfinitesimalAndInfinite",
-    "pages/FunctionLimit/Continuity"
+    "pages/FunctionLimit/Continuity",
+    "pages/Derivative/DerivativeCatalog",
+    "pages/Derivative/DerivativeConcept",
+    "pages/Derivative/GeometricMeaning",
+    "pages/Derivative/BasicFormulas",
+    "pages/Derivative/ArithmeticRules",
+    "pages/Derivative/ChainRule",
+    "pages/Derivative/ImplicitAndParametric",
+    "pages/Derivative/HigherDerivatives",
+    "pages/Derivative/Differential"
   ]
 }
