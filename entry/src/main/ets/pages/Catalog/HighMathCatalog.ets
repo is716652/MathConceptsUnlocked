@@ -53,8 +53,7 @@ struct HighMathCatalog {
               .backgroundColor('#FFA726')
               .padding(16)
               .onClick(() => {
-                // TODO: 创建不定积分目录页
-                console.log('不定积分页面尚未创建');
+                router.pushUrl({ url: 'pages/Integral/IndefiniteIntegralCatalog' });
               })
 
             Button('定积分').layoutWeight(1)
@@ -64,8 +63,7 @@ struct HighMathCatalog {
               .backgroundColor('#AB47BC')
               .padding(16)
               .onClick(() => {
-                // TODO: 创建定积分目录页
-                console.log('定积分页面尚未创建');
+                router.pushUrl({ url: 'pages/DefiniteIntegral/DefiniteIntegralCatalog' });
               })
           }
           .width('100%')
@@ -77,8 +75,7 @@ struct HighMathCatalog {
               .backgroundColor('#EC407A')
               .padding(16)
               .onClick(() => {
-                // TODO: 创建级数目录页
-                console.log('级数页面尚未创建');
+                router.pushUrl({ url: 'pages/Series/SeriesCatalog' });
               })
 
             Button('微分方程').layoutWeight(1)
@@ -88,8 +85,7 @@ struct HighMathCatalog {
               .backgroundColor('#7E57C2')
               .padding(16)
               .onClick(() => {
-                // TODO: 创建微分方程目录页
-                console.log('微分方程页面尚未创建');
+                router.pushUrl({ url: 'pages/DifferentialEquation/DifferentialEquationCatalog' });
               })
           }
           .width('100%')
