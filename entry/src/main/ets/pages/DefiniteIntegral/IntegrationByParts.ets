@@ -26,15 +26,18 @@ struct IntegrationByParts {
       Scroll() {
         Column({ space: 16 }) {
           Text('定积分的分部积分法')
+            .width('100%')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor('#2196F3')
 
           Text('分部积分法在定积分中同样适用,但有一个重要技巧:区间再现!')
+            .width('100%')
             .fontSize(15)
             .lineHeight(24)
 
           Text('📌 定积分分部积分公式')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF9800')
@@ -48,6 +51,7 @@ struct IntegrationByParts {
             .borderRadius(8)
 
           Text('💡 选择 u 和 dv 的原则')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#9C27B0')
@@ -60,6 +64,7 @@ struct IntegrationByParts {
             .borderRadius(8)
 
           Text('📚 基础例题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#4CAF50')
@@ -89,6 +94,7 @@ struct IntegrationByParts {
             .borderRadius(8)
 
           Text('🎯 区间再现技巧')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -109,11 +115,13 @@ struct IntegrationByParts {
             .borderRadius(8)
 
           Text('🎯 递推公式')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#009688')
 
           Text('有些积分可以建立递推关系式。')
+            .width('100%')
             .fontSize(14)
             .lineHeight(24)
             .padding(12)
@@ -142,6 +150,7 @@ struct IntegrationByParts {
             .borderRadius(8)
 
           Text('🎯 练习题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -154,6 +163,7 @@ struct IntegrationByParts {
             .borderRadius(8)
 
           Text('💭 小结')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#607D8B')
@@ -164,6 +174,7 @@ struct IntegrationByParts {
         }
         .width('100%')
         .padding(16)
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)

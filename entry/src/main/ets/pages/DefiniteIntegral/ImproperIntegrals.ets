@@ -26,6 +26,7 @@ struct ImproperIntegrals {
       Scroll() {
         Column({ space: 16 }) {
           Text('反常积分')
+            .width('100%')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor('#2196F3')
@@ -35,6 +36,7 @@ struct ImproperIntegrals {
             .lineHeight(24)
 
           Text('📌 两类反常积分')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF9800')
@@ -47,6 +49,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('📌 第一类:无穷限反常积分')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#4CAF50')
@@ -76,6 +79,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('💡 重要结论:p-积分')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#9C27B0')
@@ -97,6 +101,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('📌 第二类:无界函数的反常积分')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -126,6 +131,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('💡 瑕积分的 p-判别法')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#009688')
@@ -139,6 +145,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('🎯 综合应用')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#3F51B5')
@@ -152,6 +159,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('🎯 练习题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -164,6 +172,7 @@ struct ImproperIntegrals {
             .borderRadius(8)
 
           Text('💭 小结')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#607D8B')
@@ -174,6 +183,7 @@ struct ImproperIntegrals {
         }
         .width('100%')
         .padding(16)
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)

@@ -26,15 +26,18 @@ struct GeometricApplications {
       Scroll() {
         Column({ space: 16 }) {
           Text('定积分的几何应用')
+            .width('100%')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor('#2196F3')
 
           Text('定积分最直观的应用就是计算几何图形的面积、体积、弧长等!')
+            .width('100%')
             .fontSize(15)
             .lineHeight(24)
 
           Text('📌 平面图形的面积')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF9800')
@@ -64,6 +67,7 @@ struct GeometricApplications {
             .borderRadius(8)
 
           Text('2️⃣ 极坐标系下')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#4CAF50')
@@ -85,6 +89,7 @@ struct GeometricApplications {
             .borderRadius(8)
 
           Text('📌 旋转体的体积')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#9C27B0')
@@ -114,6 +119,7 @@ struct GeometricApplications {
             .borderRadius(8)
 
           Text('📌 平行截面面积已知的立体体积')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -135,6 +141,7 @@ struct GeometricApplications {
             .borderRadius(8)
 
           Text('📌 曲线弧长')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#009688')
@@ -156,6 +163,7 @@ struct GeometricApplications {
             .borderRadius(8)
 
           Text('🎯 练习题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -168,6 +176,7 @@ struct GeometricApplications {
             .borderRadius(8)
 
           Text('💭 小结')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#607D8B')
@@ -178,6 +187,7 @@ struct GeometricApplications {
         }
         .width('100%')
         .padding(16)
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)

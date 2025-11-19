@@ -26,20 +26,24 @@ struct PhysicalApplications {
       Scroll() {
         Column({ space: 16 }) {
           Text('定积分的物理应用')
+            .width('100%')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor('#2196F3')
 
           Text('定积分是解决物理问题的强大工具,核心思想:"微元法"')
+            .width('100%')
             .fontSize(15)
             .lineHeight(24)
 
           Text('💡 微元法思想')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF9800')
 
           Text('解决物理问题的步骤:\n\n1️⃣ 分割:将整体分成n个微小部分\n2️⃣ 近似:每个微小部分用简单公式\n3️⃣ 求和:所有微小量相加\n4️⃣ 取极限:n→∞,得到定积分\n\n通俗理解:"化整为零,积零为整"')
+            .width('100%')
             .fontSize(14)
             .lineHeight(24)
             .padding(12)
@@ -47,6 +51,7 @@ struct PhysicalApplications {
             .borderRadius(8)
 
           Text('📌 变力做功')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#4CAF50')
@@ -76,6 +81,7 @@ struct PhysicalApplications {
             .borderRadius(8)
 
           Text('📌 液体压力')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#9C27B0')
@@ -118,6 +124,7 @@ struct PhysicalApplications {
             .borderRadius(8)
 
           Text('📌 平均值')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#009688')
@@ -139,6 +146,7 @@ struct PhysicalApplications {
             .borderRadius(8)
 
           Text('💭 万有引力')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#3F51B5')
@@ -152,6 +160,7 @@ struct PhysicalApplications {
             .borderRadius(8)
 
           Text('🎯 练习题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -164,6 +173,7 @@ struct PhysicalApplications {
             .borderRadius(8)
 
           Text('💭 小结')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#607D8B')
@@ -174,6 +184,7 @@ struct PhysicalApplications {
         }
         .width('100%')
         .padding(16)
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)

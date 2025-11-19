@@ -26,15 +26,18 @@ struct Substitution {
       Scroll() {
         Column({ space: 16 }) {
           Text('定积分的换元法')
+            .width('100%')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor('#2196F3')
 
           Text('定积分换元与不定积分换元的最大区别:换元后要同时换上下限!')
+            .width('100%')
             .fontSize(15)
             .lineHeight(24)
 
           Text('📌 定积分换元公式')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF9800')
@@ -48,6 +51,7 @@ struct Substitution {
             .borderRadius(8)
 
           Text('💡 两种处理方式')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#9C27B0')
@@ -60,6 +64,7 @@ struct Substitution {
             .borderRadius(8)
 
           Text('📚 基础例题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#4CAF50')
@@ -89,6 +94,7 @@ struct Substitution {
             .borderRadius(8)
 
           Text('🎯 三角代换')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -110,11 +116,13 @@ struct Substitution {
             .borderRadius(8)
 
           Text('🎯 倒代换')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#009688')
 
           Text('当被积函数分母次数高时,可用倒代换:\n令 x = 1/t')
+            .width('100%')
             .fontSize(14)
             .lineHeight(24)
             .padding(12)
@@ -130,6 +138,7 @@ struct Substitution {
             .borderRadius(8)
 
           Text('💭 区间再现公式')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#3F51B5')
@@ -151,6 +160,7 @@ struct Substitution {
             .borderRadius(8)
 
           Text('🎯 练习题')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#FF5722')
@@ -163,6 +173,7 @@ struct Substitution {
             .borderRadius(8)
 
           Text('💭 小结')
+            .width('100%')
             .fontSize(18)
             .fontWeight(FontWeight.Bold)
             .fontColor('#607D8B')
@@ -173,6 +184,7 @@ struct Substitution {
         }
         .width('100%')
         .padding(16)
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)

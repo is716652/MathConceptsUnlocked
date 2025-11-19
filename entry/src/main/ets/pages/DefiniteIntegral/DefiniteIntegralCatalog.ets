@@ -44,14 +44,18 @@ struct DefiniteIntegralCatalog {
       Scroll() {
         Column({ space: 12 }) {
           Text('📐 定积分学习指南')
+            .width('100%')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .fontColor('#2196F3')
+            .textAlign(TextAlign.Start)
             .margin({ top: 8 })
 
           Text('定积分是不定积分的"升级版",不仅能求原函数,还能计算具体数值。从求面积到物理应用,定积分是连接数学与现实世界的桥梁。')
+            .width('100%')
             .fontSize(14)
             .lineHeight(22)
+            .textAlign(TextAlign.Start)
             .padding(12)
             .backgroundColor('#E3F2FD')
             .borderRadius(8)
@@ -109,6 +113,7 @@ struct DefiniteIntegralCatalog {
         }
         .width('100%')
         .padding(12)
+        .alignItems(HorizontalAlign.Start)
       }
       .layoutWeight(1)
       .scrollBar(BarState.On)
