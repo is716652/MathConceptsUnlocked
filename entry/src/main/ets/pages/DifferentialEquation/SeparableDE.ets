@@ -1,10 +1,12 @@
-import router from '@ohos.router';
+﻿import router from '@ohos.router';
+import { YouyouFloatingButton } from '../../components/YouyouFloatingButton';
 
 @Entry
 @Component
 struct SeparableDE {
   build() {
-    Column() {
+    Stack() {
+      Column() {
       Row() {
         Button('← 返回')
           .fontSize(14)
@@ -176,5 +178,9 @@ struct SeparableDE {
     .width('100%')
     .height('100%')
     .backgroundColor('#FFFFFF')
+  
+      // 悠悠浮动按钮
+      YouyouFloatingButton()
+    }
   }
 }

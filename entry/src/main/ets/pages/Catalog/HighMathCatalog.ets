@@ -24,6 +24,32 @@ struct HighMathCatalog {
 
       Scroll() {
         Column({ space: 12 }) {
+          // 悠悠助手按钮（置顶位置）
+          Button() {
+            Row({ space: 8 }) {
+              Text('🤖')
+                .fontSize(24)
+              Column({ space: 2 }) {
+                Text('智能助手 悠悠')
+                  .fontSize(16)
+                  .fontWeight(FontWeight.Bold)
+                  .fontColor('#FFFFFF')
+                Text('有问题?问悠悠!')
+                  .fontSize(12)
+                  .fontColor('#E3F2FD')
+              }
+              .alignItems(HorizontalAlign.Start)
+            }
+          }
+          .width('100%')
+          .height(60)
+          .backgroundColor('#2196F3')
+          .borderRadius(16)
+          .shadow({ radius: 8, color: '#402196F3', offsetY: 4 })
+          .onClick(() => {
+            router.pushUrl({ url: 'pages/Youyou/YouyouChat' });
+          })
+
           Row() {
             Button('函数与极限').layoutWeight(1)
               .fontSize(16)

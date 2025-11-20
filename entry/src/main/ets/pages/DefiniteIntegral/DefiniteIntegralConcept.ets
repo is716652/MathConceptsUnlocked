@@ -1,10 +1,12 @@
-import router from '@ohos.router';
+﻿import router from '@ohos.router';
+import { YouyouFloatingButton } from '../../components/YouyouFloatingButton';
 
 @Entry
 @Component
 struct DefiniteIntegralConcept {
   build() {
-    Column() {
+    Stack() {
+      Column() {
       Row() {
         Button('← 返回')
           .fontSize(14)
@@ -210,5 +212,9 @@ struct DefiniteIntegralConcept {
     .width('100%')
     .height('100%')
     .backgroundColor('#FFFFFF')
+  
+      // 悠悠浮动按钮
+      YouyouFloatingButton()
+    }
   }
 }

@@ -1,27 +1,29 @@
 import router from '@ohos.router';
+import { YouyouFloatingButton } from '../../components/YouyouFloatingButton';
 
 @Entry
 @Component
 struct FirstOrderDE {
   build() {
-    Column() {
-      Row() {
-        Button('← 返回')
-          .fontSize(14)
-          .fontColor('#3F51B5')
-          .backgroundColor('#F0F0F0')
-          .borderRadius(8)
-          .padding({ left: 12, right: 12, top: 6, bottom: 6 })
-          .onClick(() => router.back())
+    Stack() {
+      Column() {
+        Row() {
+          Button('← 返回')
+            .fontSize(14)
+            .fontColor('#3F51B5')
+            .backgroundColor('#F0F0F0')
+            .borderRadius(8)
+            .padding({ left: 12, right: 12, top: 6, bottom: 6 })
+            .onClick(() => router.back())
 
-        Text('微分方程的概念')
-          .layoutWeight(1)
-          .fontSize(18)
-          .fontWeight(FontWeight.Bold)
-          .textAlign(TextAlign.Center)
-      }
-      .width('100%')
-      .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+          Text('微分方程的概念')
+            .layoutWeight(1)
+            .fontSize(18)
+            .fontWeight(FontWeight.Bold)
+            .textAlign(TextAlign.Center)
+        }
+        .width('100%')
+        .padding({ left: 8, right: 8, top: 4, bottom: 4 })
 
       Scroll() {
         Column({ space: 16 }) {
@@ -202,9 +204,13 @@ struct FirstOrderDE {
       .layoutWeight(1)
       .scrollBar(BarState.On)
       .edgeEffect(EdgeEffect.Spring)
+      }
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#FFFFFF')
+
+      // 悠悠浮动按钮
+      YouyouFloatingButton()
     }
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#FFFFFF')
   }
 }

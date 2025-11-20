@@ -1,10 +1,12 @@
-import router from '@ohos.router';
+﻿import router from '@ohos.router';
+import { YouyouFloatingButton } from '../../components/YouyouFloatingButton';
 
 @Entry
 @Component
 struct FunctionConcept {
   build() {
-    Column() {
+    Stack() {
+      Column() {
       Row() {
         Button('← 返回')
           .fontSize(14)
@@ -151,5 +153,9 @@ struct FunctionConcept {
     .height('100%')
     .justifyContent(FlexAlign.Start)
     .backgroundColor('#FFFFFF')
+  
+      // 悠悠浮动按钮
+      YouyouFloatingButton()
+    }
   }
 }
